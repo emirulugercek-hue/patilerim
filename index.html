@@ -4,140 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Patilerim — Evcil Hayvan Bakım Asistanı</title>
-  <meta name="description" content="Patilerim ile evcil hayvanınızın mama, aşı, sağlık, kilo ve ilaç takibini kolayca yapın. Türkiye'nin en kapsamlı pati bakım uygulaması." />
+  <meta name="description" content="Patilerim ile evcil hayvanınızın mama, aşı, sağlık, kilo ve ilaç takibini kolayca yapın. Sosyal pati topluluğuna katılın. Türkiye'nin en kapsamlı pati bakım uygulaması." />
   <meta property="og:title" content="Patilerim 🐾" />
-  <meta property="og:description" content="Patinizin tüm bakım ihtiyaçları tek uygulamada." />
+  <meta property="og:description" content="Patinizin tüm bakım ihtiyaçları ve sosyal pati topluluğu tek uygulamada." />
   <meta property="og:type" content="website" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 32px; background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px); border-bottom: 1px solid #f0f0f0;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #f0f0f0; }
     .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; color: #52B788; }
     .nav-logo span { font-size: 28px; }
-    .nav-btn {
-      background: #52B788; color: #fff; padding: 10px 22px;
-      border-radius: 24px; font-weight: 700; font-size: 14px;
-      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
-    }
+    .nav-badge { font-size: 11px; font-weight: 700; background: #F43348; color: #fff; padding: 2px 8px; border-radius: 10px; margin-left: 2px; }
+    .nav-btn { background: #52B788; color: #fff; padding: 10px 22px; border-radius: 24px; font-weight: 700; font-size: 14px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
     .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(82,183,136,0.4); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(160deg, #F0FDF4 0%, #fff 50%, #EEF2FF 100%);
-      padding: 100px 24px 60px; text-align: center;
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, #F0FDF4 0%, #fff 50%, #EEF2FF 100%); padding: 100px 24px 60px; text-align: center; }
     .hero-inner { max-width: 680px; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #F0FDF4; border: 1px solid #BBF7D0;
-      padding: 6px 16px; border-radius: 20px; font-size: 13px;
-      font-weight: 600; color: #166534; margin-bottom: 28px;
-    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: #F0FDF4; border: 1px solid #BBF7D0; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; color: #166534; margin-bottom: 28px; }
     .hero h1 { font-size: clamp(36px, 7vw, 64px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
     .hero h1 em { color: #52B788; font-style: normal; }
-    .hero p { font-size: 18px; color: #6B7280; line-height: 1.7; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .hero p { font-size: 18px; color: #6B7280; line-height: 1.7; margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; }
     .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: #52B788; color: #fff; padding: 16px 32px;
-      border-radius: 16px; font-weight: 700; font-size: 16px;
-      text-decoration: none; display: flex; align-items: center; gap: 8px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+    .btn-primary { background: #52B788; color: #fff; padding: 16px 32px; border-radius: 16px; font-weight: 700; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(82,183,136,0.45); }
-    .btn-secondary {
-      background: #fff; color: #374151; padding: 16px 32px;
-      border-radius: 16px; font-weight: 700; font-size: 16px;
-      text-decoration: none; border: 2px solid #E5E7EB;
-      transition: border-color 0.2s;
-    }
+    .btn-secondary { background: #fff; color: #374151; padding: 16px 32px; border-radius: 16px; font-weight: 700; font-size: 16px; text-decoration: none; border: 2px solid #E5E7EB; transition: border-color 0.2s; }
     .btn-secondary:hover { border-color: #52B788; color: #52B788; }
     .hero-note { margin-top: 20px; font-size: 13px; color: #9CA3AF; }
-
-    /* ── FEATURES ── */
+    .section-label { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .label-green { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+    .label-pink { background: #FFF1F3; color: #9B1B30; border: 1px solid #FECDD3; }
     .features { padding: 100px 24px; background: #fff; }
     .section-title { text-align: center; font-size: clamp(28px, 5vw, 42px); font-weight: 900; margin-bottom: 16px; }
     .section-sub { text-align: center; color: #6B7280; font-size: 17px; margin-bottom: 60px; }
-    .features-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px; max-width: 1100px; margin: 0 auto;
-    }
-    .feature-card {
-      background: #F9FAFB; border-radius: 20px; padding: 28px;
-      border: 1px solid #F3F4F6; transition: transform 0.2s, box-shadow 0.2s;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .feature-card { background: #F9FAFB; border-radius: 20px; padding: 28px; border: 1px solid #F3F4F6; transition: transform 0.2s, box-shadow 0.2s; }
     .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
     .feature-emoji { font-size: 40px; margin-bottom: 16px; }
     .feature-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
     .feature-desc { font-size: 14px; color: #6B7280; line-height: 1.6; }
-
-    /* ── STATS ── */
+    .feature-new { display: inline-block; font-size: 10px; font-weight: 700; background: #F43348; color: #fff; padding: 2px 8px; border-radius: 8px; margin-left: 8px; vertical-align: middle; }
+    .social-section { padding: 100px 24px; background: linear-gradient(160deg, #FFF1F3 0%, #fff 60%, #FFF1F3 100%); }
+    .social-inner { max-width: 1100px; margin: 0 auto; }
+    .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .social-card { background: #fff; border-radius: 20px; padding: 28px; border: 1px solid #FECDD3; transition: transform 0.2s, box-shadow 0.2s; }
+    .social-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(244,51,72,0.12); }
     .stats { background: #52B788; padding: 80px 24px; }
-    .stats-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 40px; max-width: 800px; margin: 0 auto; text-align: center;
-    }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto; text-align: center; }
     .stat-num { font-size: 48px; font-weight: 900; color: #fff; margin-bottom: 8px; }
     .stat-label { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 600; }
-
-    /* ── HOW IT WORKS ── */
     .how { padding: 100px 24px; background: #F9FAFB; }
     .steps { display: flex; flex-direction: column; gap: 0; max-width: 600px; margin: 0 auto; }
     .step { display: flex; gap: 20px; padding: 28px 0; border-bottom: 1px solid #E5E7EB; }
     .step:last-child { border-bottom: none; }
-    .step-num {
-      width: 44px; height: 44px; border-radius: 12px; background: #52B788;
-      color: #fff; font-weight: 800; font-size: 18px;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
+    .step-num { width: 44px; height: 44px; border-radius: 12px; background: #52B788; color: #fff; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-num.pink { background: #F43348; }
     .step-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
     .step-desc { font-size: 14px; color: #6B7280; line-height: 1.6; }
-
-    /* ── CTA ── */
-    .cta {
-      padding: 100px 24px; text-align: center;
-      background: linear-gradient(160deg, #F0FDF4, #EEF2FF);
-    }
+    .cta { padding: 100px 24px; text-align: center; background: linear-gradient(160deg, #F0FDF4, #EEF2FF); }
     .cta h2 { font-size: clamp(28px, 5vw, 48px); font-weight: 900; margin-bottom: 16px; }
     .cta p { color: #6B7280; font-size: 17px; margin-bottom: 40px; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #1a1a1a; color: #9CA3AF; padding: 40px 24px;
-      text-align: center; font-size: 14px;
-    }
+    footer { background: #1a1a1a; color: #9CA3AF; padding: 40px 24px; text-align: center; font-size: 14px; }
     footer a { color: #52B788; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
-
-    @media (max-width: 600px) {
-      nav { padding: 12px 20px; }
-      .hero-btns { flex-direction: column; align-items: center; }
-      .btn-primary, .btn-secondary { width: 100%; max-width: 300px; justify-content: center; }
-    }
+    @media (max-width: 600px) { nav { padding: 12px 20px; } .hero-btns { flex-direction: column; align-items: center; } .btn-primary, .btn-secondary { width: 100%; max-width: 300px; justify-content: center; } }
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav>
-    <div class="nav-logo"><span>🐾</span> Patilerim</div>
+    <div class="nav-logo"><span>🐾</span> Patilerim <span class="nav-badge">v2.0</span></div>
     <a href="#download" class="nav-btn">App Store'da İndir</a>
   </nav>
-
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">🇹🇷 Türkiye'nin Pati Bakım Uygulaması</div>
+      <div class="hero-badge">🇹🇷 Türkiye'nin Pati Bakım ve Sosyal Uygulaması</div>
       <h1>Patinizin her şeyi<br/><em>tek uygulamada</em></h1>
-      <p>Mama takibi, aşı takvimi, ilaç hatırlatıcıları, veteriner bulma ve daha fazlası. Tamamen ücretsiz, reklamsız.</p>
+      <p>Mama takibi, aşı takvimi, ilaç hatırlatıcıları, veteriner bulma ve artık sosyal pati topluluğu. Tamamen ücretsiz, reklamsız.</p>
       <div class="hero-btns">
         <a href="#download" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -145,120 +86,64 @@
         </a>
         <a href="#features" class="btn-secondary">Özellikleri Gör</a>
       </div>
-      <p class="hero-note">🆓 Ücretsiz · 🚫 Reklamsız · 📴 İnternetsiz Çalışır</p>
+      <p class="hero-note">🆓 Ücretsiz · 🚫 Reklamsız · 🐾 Sosyal Topluluk</p>
     </div>
   </section>
-
-  <!-- FEATURES -->
   <section class="features" id="features">
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label label-green">🛠️ Temel Özellikler</span></div>
     <h2 class="section-title">Her şeyi düşündük 🐾</h2>
     <p class="section-sub">Patinizin sağlıklı ve mutlu yaşaması için ihtiyacınız olan her şey</p>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-emoji">🍖</div>
-        <div class="feature-title">Mama Takibi</div>
-        <div class="feature-desc">Mama stoku, tüketim miktarı ve marka tercihlerini takip edin. Stok azaldığında otomatik uyarı alın.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-emoji">💉</div>
-        <div class="feature-title">Aşı Takvimi</div>
-        <div class="feature-desc">Aşı geçmişini kaydedin, sonraki aşı tarihlerini hatırlatıcılarla takip edin. Hiçbir aşıyı kaçırmayın.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-emoji">💊</div>
-        <div class="feature-title">İlaç Takibi</div>
-        <div class="feature-desc">Aktif ilaçları yönetin, doz hatırlatıcıları alın. Geçmiş tedavileri kolayca görüntüleyin.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-emoji">📍</div>
-        <div class="feature-title">Yakın Veteriner</div>
-        <div class="feature-desc">Konumunuza göre en yakın veteriner kliniklerini ve pet shopları haritada görün, tek tuşla yol alın.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-emoji">💰</div>
-        <div class="feature-title">Harcama Takibi</div>
-        <div class="feature-desc">Mama, veteriner, bakım harcamalarını kategorize edin. Aylık grafiklerle bütçenizi kontrol altında tutun.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-emoji">🧠</div>
-        <div class="feature-title">Pati Danışmanı</div>
-        <div class="feature-desc">Patinizin yaşına ve cinsine göre kişisel tavsiyeler alın. Eklem sağlığından beslenmeye uzman önerileri.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-emoji">📅</div>
-        <div class="feature-title">Birleşik Takvim</div>
-        <div class="feature-desc">Tüm patilerinizin yaklaşan aşı, ilaç ve bakım etkinliklerini tek ekranda görün.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-emoji">☁️</div>
-        <div class="feature-title">Veri Yedekleme</div>
-        <div class="feature-desc">Tüm verilerinizi yedekleyin, telefon değiştirseniz bile kayıp yaşamayın. Aile ile kolayca paylaşın.</div>
+      <div class="feature-card"><div class="feature-emoji">🍖</div><div class="feature-title">Mama Takibi</div><div class="feature-desc">Mama stoku, tüketim miktarı ve marka tercihlerini takip edin. Stok azaldığında otomatik uyarı alın.</div></div>
+      <div class="feature-card"><div class="feature-emoji">💉</div><div class="feature-title">Aşı Takvimi</div><div class="feature-desc">Aşı geçmişini kaydedin, sonraki aşı tarihlerini hatırlatıcılarla takip edin. Hiçbir aşıyı kaçırmayın.</div></div>
+      <div class="feature-card"><div class="feature-emoji">💊</div><div class="feature-title">İlaç Takibi</div><div class="feature-desc">Aktif ilaçları yönetin, doz hatırlatıcıları alın. Geçmiş tedavileri kolayca görüntüleyin.</div></div>
+      <div class="feature-card"><div class="feature-emoji">📍</div><div class="feature-title">Yakın Veteriner</div><div class="feature-desc">Konumunuza göre en yakın veteriner kliniklerini ve pet shopları haritada görün, tek tuşla yol alın.</div></div>
+      <div class="feature-card"><div class="feature-emoji">💰</div><div class="feature-title">Harcama Takibi</div><div class="feature-desc">Mama, veteriner, bakım harcamalarını kategorize edin. Aylık grafiklerle bütçenizi kontrol altında tutun.</div></div>
+      <div class="feature-card"><div class="feature-emoji">🧠</div><div class="feature-title">Pati Danışmanı</div><div class="feature-desc">Patinizin yaşına ve cinsine göre kişisel tavsiyeler alın. Eklem sağlığından beslenmeye uzman önerileri.</div></div>
+      <div class="feature-card"><div class="feature-emoji">📅</div><div class="feature-title">Birleşik Takvim</div><div class="feature-desc">Tüm patilerinizin yaklaşan aşı, ilaç ve bakım etkinliklerini tek ekranda görün.</div></div>
+      <div class="feature-card"><div class="feature-emoji">☁️</div><div class="feature-title">Veri Yedekleme</div><div class="feature-desc">Tüm verilerinizi yedekleyin, telefon değiştirseniz bile kayıp yaşamayın. Aile ile kolayca paylaşın.</div></div>
+    </div>
+  </section>
+  <section class="social-section" id="social">
+    <div class="social-inner">
+      <div style="text-align:center;margin-bottom:8px"><span class="section-label label-pink">✨ Yeni — v2.0</span></div>
+      <h2 class="section-title">Sosyal Pati Topluluğu 🐶🐱</h2>
+      <p class="section-sub">Patinizi dünyayla paylaşın, diğer pati sahipleriyle tanışın</p>
+      <div class="social-grid">
+        <div class="social-card"><div class="feature-emoji">👤</div><div class="feature-title">Sosyal Profil <span class="feature-new">YENİ</span></div><div class="feature-desc">Patiniz için kişisel bir profil oluşturun. Fotoğraflarını, bilgilerini ve öne çıkan anlarını paylaşın.</div></div>
+        <div class="social-card"><div class="feature-emoji">👥</div><div class="feature-title">Arkadaşlar <span class="feature-new">YENİ</span></div><div class="feature-desc">Diğer pati sahipleriyle bağlantı kurun. Arkadaşlarınızın patilerini takip edin, deneyimlerini keşfedin.</div></div>
+        <div class="social-card"><div class="feature-emoji">💬</div><div class="feature-title">Mesajlaşma <span class="feature-new">YENİ</span></div><div class="feature-desc">Diğer pati sahipleriyle doğrudan mesajlaşın. Tavsiye alın, deneyim paylaşın, arkadaşlık kurun.</div></div>
+        <div class="social-card"><div class="feature-emoji">🗺️</div><div class="feature-title">Yakındaki Patiler <span class="feature-new">YENİ</span></div><div class="feature-desc">Harita üzerinde yakınızdaki pati sahiplerini keşfedin. Park buluşmaları düzenleyin, yeni dostluklar kurun.</div></div>
       </div>
     </div>
   </section>
-
-  <!-- STATS -->
   <section class="stats">
     <div class="stats-grid">
-      <div>
-        <div class="stat-num">%100</div>
-        <div class="stat-label">Ücretsiz</div>
-      </div>
-      <div>
-        <div class="stat-num">0</div>
-        <div class="stat-label">Reklam</div>
-      </div>
-      <div>
-        <div class="stat-num">8+</div>
-        <div class="stat-label">Özellik</div>
-      </div>
-      <div>
-        <div class="stat-num">🐾</div>
-        <div class="stat-label">Sonsuz Sevgi</div>
-      </div>
+      <div><div class="stat-num">%100</div><div class="stat-label">Ücretsiz</div></div>
+      <div><div class="stat-num">0</div><div class="stat-label">Reklam</div></div>
+      <div><div class="stat-num">12+</div><div class="stat-label">Özellik</div></div>
+      <div><div class="stat-num">v2.0</div><div class="stat-label">Sosyal Güncelleme</div></div>
+      <div><div class="stat-num">🐾</div><div class="stat-label">Sonsuz Sevgi</div></div>
     </div>
   </section>
-
-  <!-- HOW IT WORKS -->
   <section class="how">
     <h2 class="section-title">Nasıl Çalışır?</h2>
-    <p class="section-sub">3 adımda başlayın</p>
+    <p class="section-sub">4 adımda başlayın</p>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <div class="step-title">Patini Ekle</div>
-          <div class="step-desc">Adını, cinsini, doğum tarihini ve fotoğrafını ekle. Birden fazla patin varsa hepsini ekleyebilirsin.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <div class="step-title">Bilgilerini Gir</div>
-          <div class="step-desc">Mama, aşı, sağlık, kilo ve ilaç bilgilerini kaydet. Uygulama seni otomatik hatırlatıcılarla yönlendirir.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <div class="step-title">Takip Et ve Dinlen</div>
-          <div class="step-desc">Patilerim gerisini halleder. Yaklaşan aşı, azalan mama veya ilaç zamanı geldiğinde seni bilgilendirir.</div>
-        </div>
-      </div>
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Patini Ekle</div><div class="step-desc">Adını, cinsini, doğum tarihini ve fotoğrafını ekle. Birden fazla patin varsa hepsini ekleyebilirsin.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Bilgilerini Gir</div><div class="step-desc">Mama, aşı, sağlık, kilo ve ilaç bilgilerini kaydet. Uygulama seni otomatik hatırlatıcılarla yönlendirir.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">Takip Et ve Dinlen</div><div class="step-desc">Patilerim gerisini halleder. Yaklaşan aşı, azalan mama veya ilaç zamanı geldiğinde seni bilgilendirir.</div></div></div>
+      <div class="step"><div class="step-num pink">4</div><div><div class="step-title">Topluluğa Katıl ✨</div><div class="step-desc">Sosyal profilini oluştur, diğer pati sahipleriyle tanış. Yakınındaki patileri haritada bul, mesajlaş ve yeni arkadaşlıklar kur.</div></div></div>
     </div>
   </section>
-
-  <!-- CTA -->
   <section class="cta" id="download">
     <h2>Patini hak ettiği ilgiyi ver 🐾</h2>
-    <p>Tamamen ücretsiz, reklamsız ve verileriniz sadece sizin cihazınızda.</p>
-    <a href="#" class="btn-primary" style="display:inline-flex; font-size:18px; padding:18px 40px;">
+    <p>Tamamen ücretsiz, reklamsız. Artık sosyal pati topluluğuyla birlikte.</p>
+    <a href="#" class="btn-primary" style="display:inline-flex;font-size:18px;padding:18px 40px;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       App Store'dan Ücretsiz İndir
     </a>
   </section>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-links">
       <a href="privacy-policy.html">Gizlilik Politikası</a>
@@ -267,6 +152,5 @@
     </div>
     <p>© 2026 Patilerim. Tüm hakları saklıdır. 🐾</p>
   </footer>
-
 </body>
 </html>
