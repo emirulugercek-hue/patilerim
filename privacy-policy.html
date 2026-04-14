@@ -1,109 +1,51 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Patilerim — Gizlilik Politikası</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-    background: #F9FAFB;
-    color: #1A1A1A;
-    line-height: 1.7;
-    padding: 0;
-  }
-  header {
-    background: linear-gradient(135deg, #52B788, #1E7A52);
-    color: white;
-    padding: 48px 24px 32px;
-    text-align: center;
-  }
-  .paw { font-size: 48px; margin-bottom: 12px; display: block; }
-  header h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
-  header p { font-size: 14px; opacity: 0.85; }
-  main { max-width: 680px; margin: 0 auto; padding: 32px 24px 64px; }
-  h2 {
-    font-size: 15px; font-weight: 700; color: #52B788;
-    letter-spacing: 0.5px; margin: 36px 0 12px;
-    padding-bottom: 8px; border-bottom: 1px solid #E5E7EB;
-  }
-  p { font-size: 15px; color: #374151; margin-bottom: 12px; }
-  .highlight {
-    background: #F0FDF4; border-left: 3px solid #52B788;
-    padding: 14px 18px; border-radius: 0 10px 10px 0;
-    margin: 16px 0; font-size: 14px; color: #166534;
-  }
-  .contact {
-    background: #fff; border-radius: 16px; padding: 20px 24px;
-    margin-top: 40px; border: 1px solid #E5E7EB;
-    text-align: center;
-  }
-  .contact a { color: #52B788; font-weight: 600; text-decoration: none; }
-  .updated { font-size: 12px; color: #9CA3AF; text-align: center; margin-top: 32px; }
-  footer {
-    text-align: center; padding: 24px;
-    font-size: 12px; color: #9CA3AF;
-    border-top: 1px solid #E5E7EB;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patilerim — Gizlilik Politikası</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F5F6F8; color: #1C1C1E; line-height: 1.7; }
+    .hero { background: linear-gradient(135deg, #52B788 0%, #3A9A6E 100%); padding: 56px 24px 40px; text-align: center; color: #fff; }
+    .hero .logo { font-size: 52px; margin-bottom: 12px; }
+    .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+    .hero p  { font-size: 14px; opacity: 0.88; }
+    .container { max-width: 720px; margin: 0 auto; padding: 32px 20px 60px; }
+    .summary-card { background: #fff; border-radius: 18px; padding: 20px 24px; margin-bottom: 28px; border-left: 4px solid #52B788; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .summary-card p { font-size: 14px; color: #374151; line-height: 1.7; }
+    .summary-card strong { color: #52B788; }
+    section { background: #fff; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    section h2 { font-size: 16px; font-weight: 800; color: #1C1C1E; margin-bottom: 12px; }
+    section p, section li { font-size: 14px; color: #374151; line-height: 1.75; }
+    ul { padding-left: 20px; margin-top: 8px; }
+    li { margin-bottom: 6px; }
+    .tag { display: inline-block; background: #F0FDF4; color: #166534; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-bottom: 10px; }
+    .tag.orange { background: #FFF7ED; color: #92400E; }
+    .tag.blue { background: #EFF6FF; color: #1D4ED8; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+    th { background: #F9FAFB; text-align: left; padding: 10px 12px; font-weight: 700; color: #374151; border-bottom: 2px solid #E5E7EB; }
+    td { padding: 10px 12px; border-bottom: 1px solid #F3F4F6; color: #4B5563; }
+    a { color: #52B788; text-decoration: none; font-weight: 600; }
+    .footer { text-align: center; padding: 32px 20px; font-size: 12px; color: #9CA3AF; }
+    .footer strong { color: #52B788; }
+  </style>
 </head>
 <body>
-
-<header>
-  <span class="paw">🐾</span>
-  <h1>Patilerim Gizlilik Politikası</h1>
-  <p>Son güncelleme: Mart 2026</p>
-</header>
-
-<main>
-
-  <div class="highlight">
-    <strong>Özet:</strong> Patilerim, verilerinizi yalnızca telefonunuzda saklar. Hiçbir kişisel veri sunucularımıza gönderilmez, üçüncü taraflarla paylaşılmaz.
-  </div>
-
-  <h2>1. Toplanan Veriler</h2>
-  <p>Patilerim uygulaması, aşağıdaki bilgileri yalnızca cihazınızda yerel olarak saklar:</p>
-  <p>Evcil hayvan profil bilgileri (isim, tür, cins, doğum tarihi), mama kayıtları, aşı takimleri, sağlık ve kilo notları, ilaç programları, harcama kayıtları ve evcil hayvan fotoğrafları.</p>
-  <p>Bu veriler <strong>hiçbir zaman sunucularımıza aktarılmaz</strong> ve internet üzerinden iletilmez.</p>
-
-  <h2>2. Konum Verisi</h2>
-  <p>Uygulama, yakındaki veteriner klinikleri ve petshopları haritada göstermek amacıyla cihazınızın anlık konum verisini kullanabilir. Bu veri yalnızca OpenStreetMap'in Overpass API'sine anlık sorgu göndermek için kullanılır ve cihazınızda saklanmaz, tarafımızca işlenmez.</p>
-  <p>Konum iznini istediğiniz zaman cihaz ayarlarından geri alabilirsiniz. Konum izni olmadan harita özelliği dışındaki tüm özellikler çalışmaya devam eder.</p>
-
-  <h2>3. Kamera ve Fotoğraf Erişimi</h2>
-  <p>Evcil hayvanınızın profil fotoğrafını eklemek için kamera veya galeri erişimi talep edilebilir. Çekilen veya seçilen fotoğraflar yalnızca cihazınızda saklanır, dışarıya aktarılmaz.</p>
-
-  <h2>4. Veri Paylaşımı</h2>
-  <p>Patilerim; kişisel verilerinizi reklam şirketlerine, üçüncü taraf analitik servislerine veya herhangi bir kuruluşa satmaz, kiralamaz veya paylaşmaz.</p>
-  <p>"Bakıcı / Aile ile Paylaş" özelliği kullanıldığında, paylaşım içeriği yalnızca sizin seçtiğiniz kişilere cihazınızın standart paylaşım özelliği (WhatsApp, e-posta, SMS vb.) üzerinden iletilir. Bu süreçte veriler tarafımızdan işlenmez.</p>
-
-  <h2>5. Veri Saklama ve Silme</h2>
-  <p>Tüm veriler cihazınızda AsyncStorage teknolojisiyle saklanır. Uygulamayı cihazınızdan kaldırdığınızda tüm veriler otomatik olarak silinir.</p>
-  <p>Uygulamayı kaldırmadan verilerinizi silmek için: <strong>Ayarlar → Veri Yedekleme → Tüm Verileri Sil</strong> seçeneğini kullanabilirsiniz.</p>
-
-  <h2>6. Çocukların Gizliliği</h2>
-  <p>Patilerim, 13 yaşın altındaki çocuklara yönelik değildir ve bu yaş grubundan bilinçli olarak veri toplamaz.</p>
-
-  <h2>7. Üçüncü Taraf Hizmetler</h2>
-  <p>Uygulama, harita özelliği için OpenStreetMap Overpass API'sini kullanır. Bu hizmetin gizlilik politikası için <a href="https://wiki.openstreetmap.org/wiki/Privacy_Policy" style="color:#52B788">OpenStreetMap Gizlilik Politikası</a>'nı inceleyebilirsiniz.</p>
-
-  <h2>8. Politika Değişiklikleri</h2>
-  <p>Bu gizlilik politikasında yapılacak önemli değişiklikler uygulama içi bildirim veya güncelleme notları aracılığıyla duyurulacaktır. Politikanın güncel halini her zaman bu sayfadan inceleyebilirsiniz.</p>
-
-  <h2>9. İletişim</h2>
-  <div class="contact">
-    <p style="margin-bottom:8px">Gizlilik politikasıyla ilgili sorularınız için:</p>
-    <a href="mailto:destek@patilerim.app">destek@patilerim.app</a>
-  </div>
-
-  <p class="updated">Bu politika 19 Mart 2026 tarihinde güncellenmiştir.</p>
-
-</main>
-
-<footer>
-  © 2026 Patilerim · Tüm hakları saklıdır
-</footer>
-
+<div class="hero"><div class="logo">🐾</div><h1>Gizlilik Politikası</h1><p>Son güncelleme: Nisan 2026</p></div>
+<div class="container">
+  <div class="summary-card"><p><strong>Kısaca:</strong> Patilerim, evcil hayvan sağlığı takip uygulamasıdır. Sosyal özellikler için hesap oluşturulduğunda bazı veriler güvenli sunucularımızda (<strong>Supabase</strong>) saklanır. Verileriniz hiçbir zaman reklam şirketlerine satılmaz.</p></div>
+  <section><h2>📋 1. Toplanan Veriler</h2><div class="tag">Yerel Depolama — Cihazda Kalır</div><ul><li>Evcil hayvan profil bilgileri (isim, tür, cins, doğum tarihi)</li><li>Mama kayıtları, aşı takibi, sağlık ve kilo notları</li><li>İlaç programları ve harcama kayıtları</li><li>Evcil hayvan fotoğrafları (yerel galeri)</li></ul><div class="tag" style="margin-top:16px;">Sunucuda Saklanan Veriler — Supabase</div><p>Hesap oluşturduğunuzda veya sosyal özellikleri kullandığınızda:</p><ul><li>E-posta adresi ve şifrelenmiş kimlik doğrulama bilgisi</li><li>Görünen isim ve biyografi</li><li>Profil fotoğrafları</li><li>Arkadaşlık istekleri ve mesajlar</li><li>Görünürlük ve mesajlaşma tercihleri</li><li>Yaklaşık konum (yalnızca "Haritada görün" aktifse)</li></ul><p style="margin-top:12px;font-size:13px;color:#6B7280;">⚠️ Hesap oluşturmak zorunlu değildir. Sosyal özellikler kullanılmadan uygulama tamamen çevrimdışı çalışır.</p></section>
+  <section><h2>📍 2. Konum Verisi</h2><div class="tag orange">İsteğe Bağlı</div><ul><li><strong>Yakın veteriner/petshop:</strong> Anlık konum OpenStreetMap Overpass API'sine gönderilir; sunucularımızda saklanmaz.</li><li><strong>Sosyal harita (Çevrem):</strong> "Haritada görün" aktifse yaklaşık konumunuz profilinizde saklanır. Diğer kullanıcılar yalnızca yaklaşık mesafeyi görür.</li></ul></section>
+  <section><h2>📷 3. Kamera ve Fotoğraf Erişimi</h2><ul><li>Evcil hayvan fotoğrafları cihazda yerel olarak saklanır.</li><li>Profil fotoğrafları Supabase sunucularımıza yüklenir ve profilinizde görünür hale gelir.</li><li>Fotoğraflarınız üçüncü taraflarla paylaşılmaz, reklam amacıyla kullanılmaz.</li></ul></section>
+  <section><h2>💬 4. Mesajlaşma ve Sosyal Özellikler</h2><div class="tag blue">Hesap Gerektirir</div><ul><li>Mesajlar Supabase sunucularında güvenli bağlantıyla saklanır.</li><li>Mesajlarınızı dilediğiniz zaman silebilirsiniz.</li><li>İstemediğiniz kullanıcıları <strong>engelleyebilir</strong> veya mesajları <strong>şikayet edebilirsiniz</strong>.</li><li>"Mesaj Al" özelliğini uygulama ayarlarından kapatabilirsiniz.</li></ul></section>
+  <section><h2>🔒 5. Veri Paylaşımı</h2><p>Patilerim, kişisel verilerinizi <strong>reklam şirketlerine, analitik servislerine veya herhangi bir üçüncü tarafa satmaz, kiralamaz veya paylaşmaz.</strong></p></section>
+  <section><h2>🔗 6. Üçüncü Taraf Hizmetler</h2><table><tr><th>Hizmet</th><th>Amaç</th><th>Gizlilik Politikası</th></tr><tr><td><strong>Supabase</strong></td><td>Kimlik doğrulama, veritabanı, profil ve mesaj depolama</td><td><a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></td></tr><tr><td><strong>RevenueCat</strong></td><td>Abonelik ve uygulama içi satın alma</td><td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></td></tr><tr><td><strong>OpenStreetMap</strong></td><td>Yakındaki veteriner ve petshop haritası</td><td><a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank">osmfoundation.org</a></td></tr><tr><td><strong>Apple Push Notifications</strong></td><td>Hatırlatma bildirimleri</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td></tr></table></section>
+  <section><h2>🗑️ 7. Veri Saklama ve Silme</h2><ul><li><strong>Yerel veriler:</strong> Uygulamayı kaldırdığınızda otomatik silinir.</li><li><strong>Sunucu verileri:</strong> Hesap silme için <a href="mailto:destek@patilerim.app">destek@patilerim.app</a> adresine yazın. 30 gün içinde kalıcı olarak silinir.</li></ul></section>
+  <section><h2>👶 8. Çocukların Gizliliği</h2><p>Patilerim 13 yaşın altındaki çocuklara yönelik değildir ve bu yaş grubundan bilinçli olarak veri toplamaz.</p></section>
+  <section><h2>📢 9. Politika Değişiklikleri</h2><p>Önemli değişiklikler uygulama içi bildirim veya güncelleme notları aracılığıyla duyurulacaktır.</p></section>
+  <section><h2>✉️ 10. İletişim</h2><p>Sorularınız için: <a href="mailto:destek@patilerim.app">destek@patilerim.app</a></p></section>
+</div>
+<div class="footer"><strong>Patilerim</strong> — Evcil dostlarınız için 🐾<br/>Bu politika Nisan 2026 tarihinde güncellenmiştir.</div>
 </body>
 </html>
