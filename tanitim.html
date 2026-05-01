@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#FAF6EE">
+<title>Patilerim — Pet bakımı tek uygulamada</title>
+<meta name="description" content="Aşı, ilaç, randevu, AI mama analizi, yakındaki vet ve petshop — Patilerim ile dostunun tüm bakım ihtiyaçları cebinizde.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Patilerim — Pet bakımı tek uygulamada">
+<meta property="og:description" content="Dostunun sağlığı ve bakımı için Türkiye'nin en kapsamlı pet uygulaması.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    background: #FAF6EE;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, sans-serif;
+    color: #1C1917;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Çok hafif arka plan dekoru — gözü dağıtmasın */
+  .bg-paw {
+    position: fixed;
+    color: rgba(244, 51, 72, 0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+  .bg-paw.p1 { font-size: 280px; top: -40px; left: -90px; transform: rotate(-12deg); }
+  .bg-paw.p2 { font-size: 220px; bottom: -30px; right: -60px; transform: rotate(15deg); }
+
+  .container {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 28px 22px 40px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* ── Top brand mark ── */
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+  .brand-mark .logo {
+    width: 32px; height: 32px;
+    background: #F43348;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(244, 51, 72, 0.25);
+  }
+  .brand-mark .name {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #57534E;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .hero .icon-app {
+    width: 104px;
+    height: 104px;
+    background: linear-gradient(135deg, #F43348 0%, #DC2540 100%);
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    margin: 0 auto 22px;
+    box-shadow:
+      0 12px 30px rgba(244, 51, 72, 0.30),
+      0 4px 10px rgba(244, 51, 72, 0.18),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.06);
+    animation: float 4.5s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-5px); }
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: #1C1917;
+  }
+  .hero p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #78716C;
+    font-weight: 500;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* ── Download buttons ── */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 22px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: transform 0.15s ease;
+    -webkit-touch-callout: none;
+  }
+  .btn:active { transform: scale(0.97); }
+
+  .btn-ios {
+    background: #1C1917;
+    color: #FAF6EE;
+    box-shadow: 0 8px 22px rgba(28, 25, 23, 0.18);
+  }
+  .btn-ios .icon-svg { font-size: 22px; line-height: 1; }
+  .btn-ios .text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+  .btn-ios .text .small { font-size: 11px; opacity: 0.75; font-weight: 500; letter-spacing: 0.3px; }
+  .btn-ios .text .big { font-size: 15px; font-weight: 800; letter-spacing: -0.3px; margin-top: 2px; }
+
+  .btn-android {
+    background: #fff;
+    color: #A8A29E;
+    cursor: not-allowed;
+    border: 1.5px dashed #E7E5E4;
+  }
+  .btn-android .icon-svg { font-size: 18px; line-height: 1; }
+  .btn-android .text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+  .btn-android .text .small { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #B45309; }
+  .btn-android .text .big { font-size: 14px; font-weight: 700; margin-top: 2px; color: #57534E; }
+
+  /* ── Features card ── */
+  .features-h {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    color: #A8A29E;
+    margin-bottom: 14px;
+  }
+  .features {
+    background: #fff;
+    border: 1px solid #F0EBE2;
+    border-radius: 18px;
+    padding: 6px 18px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 18px rgba(28, 25, 23, 0.04);
+  }
+  .features .feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+  }
+  .features .feature + .feature {
+    border-top: 1px solid #F5F0E6;
+  }
+  .features .feature .emoji {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .features .feature .label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1C1917;
+    letter-spacing: -0.2px;
+    line-height: 1.4;
+  }
+
+  /* ── Business CTA ── */
+  .biz-card {
+    background: #1C1917;
+    border-radius: 18px;
+    padding: 18px 20px;
+    text-align: center;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 22px rgba(28, 25, 23, 0.16);
+  }
+  .biz-card .biz-tag {
+    display: inline-block;
+    background: #FAF6EE;
+    color: #1C1917;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+  }
+  .biz-card .biz-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #FAF6EE;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+  .biz-card .biz-sub {
+    font-size: 12.5px;
+    color: rgba(250, 246, 238, 0.7);
+    line-height: 1.4;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 24px;
+  }
+  .footer .links {
+    font-size: 12px;
+    color: #A8A29E;
+    margin-bottom: 8px;
+  }
+  .footer .links a {
+    color: #78716C;
+    text-decoration: none;
+    margin: 0 4px;
+  }
+  .footer .copyright {
+    font-size: 11px;
+    color: #B8AFA1;
+  }
+
+  /* Tablet/Desktop */
+  @media (min-width: 600px) {
+    .container {
+      padding-top: 60px;
+    }
+    .hero h1 {
+      font-size: 38px;
+    }
+  }
+
+  /* iOS notch için ekstra padding */
+  @supports (padding: max(0px)) {
+    .container {
+      padding-top: max(28px, env(safe-area-inset-top));
+      padding-bottom: max(40px, env(safe-area-inset-bottom));
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Çok hafif arka plan dekoru -->
+<div class="bg-paw p1">🐾</div>
+<div class="bg-paw p2">🐾</div>
+
+<div class="container">
+
+  <!-- Üst marka mark -->
+  <div class="brand-mark">
+    <div class="logo">🐾</div>
+    <div class="name">PATILERIM</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="icon-app">🐾</div>
+    <h1>Dostunun bakımı<br>tek uygulamada.</h1>
+    <p>Aşı, ilaç, randevu, AI mama analizi ve daha fazlası — patin için her şey cebinde.</p>
+  </div>
+
+  <!-- Download buttons -->
+  <div class="buttons">
+    <a href="https://apps.apple.com/tr/app/patilerim/id6760971970?l=tr"
+       class="btn btn-ios"
+       target="_blank"
+       rel="noopener">
+      <span class="icon-svg"></span>
+      <span class="text">
+        <span class="small">App Store'dan indir</span>
+        <span class="big">iPhone & iPad için</span>
+      </span>
+    </a>
+
+    <div class="btn btn-android" role="button" aria-disabled="true">
+      <span class="icon-svg">▶</span>
+      <span class="text">
+        <span class="small">YAKINDA</span>
+        <span class="big">Android için çıkıyor</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="features-h">UYGULAMADA NELER VAR</div>
+  <div class="features">
+    <div class="feature">
+      <div class="emoji">💉</div>
+      <div class="label">Aşı, ilaç ve veteriner randevusu takibi</div>
+    </div>
+    <div class="feature">
+      <div class="emoji">🤖</div>
+      <div class="label">AI ile mama analizi ve sağlık önerisi</div>
+    </div>
+    <div class="feature">
+      <div class="emoji">📍</div>
+      <div class="label">Yakındaki vet ve petshoplar haritada</div>
+    </div>
+    <div class="feature">
+      <div class="emoji">🍖</div>
+      <div class="label">Mama stoğu otomatik hesaplama, hatırlatıcı</div>
+    </div>
+    <div class="feature">
+      <div class="emoji">👨‍👩‍👧</div>
+      <div class="label">Aileyle paylaşılan pati profili</div>
+    </div>
+  </div>
+
+  <!-- Vet / Petshop CTA -->
+  <div class="biz-card">
+    <div class="biz-tag">VETERİNER VEYA PETSHOP MUSUN?</div>
+    <div class="biz-title">İşletme hesabı aç</div>
+    <div class="biz-sub">Hastalarını dijital olarak yönet, müşterilerine kampanya sun, randevu takvimini Patilerim'e açıver.</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="links">
+      <a href="./privacy-policy.html">Gizlilik</a> ·
+      <a href="./delete-account.html">Hesap sil</a>
+    </div>
+    <div class="copyright">© Patilerim · Türkiye'de yapıldı 🇹🇷</div>
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/.test(ua);
+    if (isAndroid) {
+      var androidBtn = document.querySelector('.btn-android');
+      if (androidBtn) {
+        androidBtn.style.animation = 'pulse 2.5s ease-in-out infinite';
+      }
+      var iosBtn = document.querySelector('.btn-ios');
+      if (iosBtn) {
+        var smallText = iosBtn.querySelector('.small');
+        var bigText = iosBtn.querySelector('.big');
+        if (smallText) smallText.textContent = "iPhone'un varsa";
+        if (bigText) bigText.textContent = "App Store'dan indir";
+      }
+    }
+  })();
+</script>
+
+<style>
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.7; }
+}
+</style>
+
+</body>
+</html>
